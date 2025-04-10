@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AkuNihongo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Nihongo<span>Translate</span></h1>
+            <p class="tagline">Terjemahkan Bahasa Indonesia ke Jepang secara Real-Time Asli no Fek Fek jir ABCD</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="translator-container">
+            <div class="text-box">
+                <h2 class="text-box-title">Bahasa Indonesia</h2>
+                <textarea id="input-text" placeholder="Ketik teks Indonesia di sini..."></textarea>
+                <button class="btn" id="translate-btn">Terjemahkan</button>
+            </div>
+
+            <div class="text-box">
+                <h2 class="text-box-title">Hasil Terjemahan</h2>
+               <div class="result-box" id="output-text"></div>
+<div class="controls">
+    <button class="btn btn-secondary" id="speak-btn">🔊 Baca</button>
+    <button class="btn btn-tertiary" id="copy-btn">📋 Salin</button>
+</div>
+                <p id="api-status" class="api-status">Status: Belum terhubung</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>wm ga wm gw ganteng jir - rasya</p>
+        </div>
+    </footer>
+       <div id="toast" class="toast">Teks berhasil disalin!</div>
+    <script src="script.js"></script>
+</body>
+</html>
