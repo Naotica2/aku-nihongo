@@ -45,26 +45,45 @@ function displayTranslation(text) {
 }
 
 // TEXT-TO-SPEECH
-function speakText() {
-    const files = [
-        'sound/prank1.mp3',
-        'sound/prank2.mp3',
-        'sound/prank3.mp3'
-    ];
+async function speakText() {
+    if (!currentTranslation) return;
 
-    const randomIndex = Math.floor(Math.random() * files.length);
-    const randomFile = files[randomIndex];
+    const apiKey = 'sk_e206bf6ca42c5d7ca5ea4f41d8fff553347e0deef1743dfd'; 
+    const voiceId = '8kS8nwk1TQdxvQOmfTZA';
+    const url = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
 
-    const audio = new Audio(randomFile);
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'xi-api-key': apiKey,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                text: currentTranslation,
+                model_id: 'eleven_flash_v2_5',
+                voice_settings: {
+                    stability: 0.5,
+                    similarity_boost: 0.75
+                }
+            })
+        });
 
-    audio.addEventListener('error', (e) => {
-        console.error(`Gagal memuat file audio: ${randomFile}`, e);
-    });
+        if (!response.ok) {
+            throw new Error(`TTS API error: ${response.statusText}`);
+        }
 
-    audio.play().catch((err) => {
-        console.error('Gagal memutar audio:', err);
-    });
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        const audio = new Audio(audioUrl);
+        audio.play();
+    } catch (error) {
+        console.error('Error generating speech:', error);
+        showToast('Gagal menghasilkan suara.');
+    }
 }
+
+
 
 // TOAST NOTIFIKASI
 function showToast(message) {
