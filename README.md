@@ -12,7 +12,7 @@ Listen to the translation with a realistic AI voice (low-latency Flash v2.5 mode
 Easily copy the translated text.​
 
 ## 🛠️ Tech Stack
-HTML, CSS, and plain JavaScript.​
+HTML, CSS, and JavaScript.​
 
 Google Translate API (no API key needed).​
 
