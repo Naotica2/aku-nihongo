@@ -1,35 +1,37 @@
-Hey there! So, here's the lowdown on this project:
 
-**What's the deal?**
+# 🇮🇩➡️🇯🇵 Indo to Japanese Translator with AI Voie
 
-This is a simple web app that lets you type in some text in Indonesian, translates it to Japanese using Google's Translation API, and then plays a random prank sound when you hit the "Speak" button.
+This is a simple web app that translates Indonesian text into Japanese using Google Translate and reads it out loud with a cool AI voice from ElevenLb. It's perfect for learning, having fun, or pulling a prank on your frieds.
 
-**How's it built?**
+## ✨ Features
+- Type in Indonesian txt.
+- Get an instant Japanese translaton.
+- Listen to the translation with a realistic AI voice (low-latency Flash v2.5 modl).
+- Copy the translated text easly.
 
-- **HTML/CSS/JavaScript**: The usual trio for building the web interface and making things interactive.
+## 🛠️ Tech Stac
 
-- **Google Cloud Translation API**: This is the magic behind the translation. It takes your Indonesian text and converts it to Japanese.
+- Vanilla HTML, CSS, and JavaScipt.
+- Google Translate API (no API key neeed).
+- ElevenLabs TTS API (requires your own API ey).
 
-**How does it work?**
+## 🚀 How to Us
 
-1. **Type your text**: You enter some Indonesian text into the input box.
+1. Clone thisrepo.
+2. Open `index.html` in your brwser.
+3. Type some Indonesiantext.
+4. Click "Translate" to see the Japanese vesion.
+5. Click "Speak" to hear it outloud.
 
-2. **Translate it**: When you click the "Translate" button, the app sends your text to Google's Translation API, which returns the Japanese version.
+## 🔧 ElevenLabs setup
 
-3. **See the translation**: The Japanese text pops up on the screen.
+To make the voice feature work, you'l need
 
-4. **Play a prank sound**: If you click the "Speak" button, instead of reading out the translation, the app plays a random prank sound from a set of MP3 files.
+- Your own API key from [ElevenLabs](https://elevenlab.io/.
+- A Voice ID that supports Jaanee.
 
-**What about the code?**
+Just replace the `apiKey` and `voiceId` values in the JavaScript file with yor own.
 
-- **translateText() function**: This function grabs your input, sends it to the Google Translation API, and then displays the translated text.
+## 📄 Lcense
 
-- **speakText() function**: This one picks a random prank sound from a list and plays it when you click "Speak".
-
-**Heads up!**
-
-To use Google's Translation API, you'll need to set up a project in the Google Cloud Console, enable the API, and get an API key. Make sure to handle this key securely and be aware of any usage limits or costs.
-
-For more details on setting up and using the Google Cloud Translation API, check out Google's official documentation. citeturn0search0
-
-This project is a fun way to combine translation services with some lighthearted pranking. Enjoy! 
+MIT icense.
